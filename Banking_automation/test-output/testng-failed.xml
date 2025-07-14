@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Banking Automation]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.banking.test.EditCustomerTest">
+        <methods>
+          <include name="setup"/>
+          <include name="validateEditCustomerForm_field_Test" invocation-numbers="0 1 4 5"/>
+          <include name="tearDown"/>
+          <include name="initilzation"/>
+          <include name="teaDown"/>
+        </methods>
+      </class> <!-- com.banking.test.EditCustomerTest -->
+      <class name="com.banking.test.NewAccountTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="envSetup"/>
+          <include name="verify_New_Accountform_Test" invocation-numbers="0 1 2 3"/>
+          <include name="initilzation"/>
+          <include name="tearown"/>
+        </methods>
+      </class> <!-- com.banking.test.NewAccountTest -->
+      <class name="com.banking.test.HomepageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="teardown"/>
+          <include name="VerifyWithdrawalPage_Test"/>
+          <include name="VerifyChnagePassrPage_Test"/>
+          <include name="VerifyLogoutButton_test"/>
+          <include name="VerifyFundTransferPage_Test"/>
+          <include name="initilzation"/>
+        </methods>
+      </class> <!-- com.banking.test.HomepageTest -->
+      <class name="com.banking.test.ChangePwdTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="initilzation"/>
+          <include name="validate_chng_pwd_test" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- com.banking.test.ChangePwdTest -->
+      <class name="com.banking.test.LoginTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="invalid_credentials_test" invocation-numbers="0 1 2 3 4"/>
+          <include name="reset_button"/>
+          <include name="setup"/>
+          <include name="initilzation"/>
+        </methods>
+      </class> <!-- com.banking.test.LoginTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Banking Automation] -->
