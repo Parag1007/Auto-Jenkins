@@ -35,7 +35,7 @@ public class BaseTest {
 	public static void initilzation() throws FileNotFoundException {
 
 		String browsername = prop.getProperty("browser");
-		// String browsername = BankingUtility.readPropetiesFiles("browser");
+
 		if (browsername.equalsIgnoreCase("chrome")) {
 
 			driver = new ChromeDriver();
@@ -54,9 +54,7 @@ public class BaseTest {
 	}
 	@AfterClass
 	public void tearDown() {
-		 
 			driver.quit();
-	 
 		System.out.println("Browser get closed.....");
 	}
 

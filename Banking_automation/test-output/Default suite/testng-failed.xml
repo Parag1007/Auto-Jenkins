@@ -3,14 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.banking.test.ChangePwdTest">
+      <class name="com.banking.test.LoginTest">
         <methods>
+          <include name="login_page_title"/>
+          <include name="invalid_credentials_test" invocation-numbers="0 1 2 3 4"/>
           <include name="tearDown"/>
+          <include name="loginValidCredentials_test"/>
+          <include name="reset_button"/>
           <include name="setup"/>
           <include name="initilzation"/>
-          <include name="validate_chng_pwd_test" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- com.banking.test.ChangePwdTest -->
+      </class> <!-- com.banking.test.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

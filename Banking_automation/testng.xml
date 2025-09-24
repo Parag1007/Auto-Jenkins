@@ -3,13 +3,13 @@
 <suite name="Banking Automation">
   <test thread-count="2"   name="Test">
     <classes>
-			<class name="com.banking.test.HomepageTest" />
+            <class name="com.banking.test.LoginTest" />
+			<!-- <class name="com.banking.test.HomepageTest" />
 			<class name="com.banking.test.NewCustomerTest" />
-       <class name="com.banking.test.LoginTest" />
 			<class name="com.banking.test.NewAccountTest" /> 
 			<class name="com.banking.test.EditCustomerTest" />  
-			<class name="com.banking.test.ChangePwdTest">  
-			</class>
+			<class name="com.banking.test.ChangePwdTest"> 
+			</class> -->
     </classes>
 	</test> <!-- Test -->
 </suite> <!-- Banking Automation -->
