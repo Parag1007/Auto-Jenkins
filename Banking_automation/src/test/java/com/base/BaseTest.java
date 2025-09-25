@@ -11,8 +11,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.util.TestUtil;
 
 public class BaseTest {
@@ -20,6 +24,8 @@ public class BaseTest {
 	public static WebDriver driver;
     public	static Properties prop;
     public static String browser;
+    protected ExtentReports extent;
+    protected ExtentTest test;
 
 	public BaseTest() throws FileNotFoundException {
 		prop = new Properties();
@@ -50,8 +56,21 @@ public class BaseTest {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
-		driver.navigate().to(prop.getProperty("loginurl"));
+		driver.navigate().to(prop.getProperty("loginurl"));	
 	}
+	
+
+    @BeforeSuite
+    public void setUpReport() {
+        extent = ExtentManager.getInstance();
+    }
+
+    @AfterSuite
+    public void tearDownReport() {
+        extent.flush();
+    }
+	
+	
 	@AfterClass
 	public void tearDown() {
 			driver.quit();
